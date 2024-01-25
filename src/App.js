@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+import Proxy from "./pages/proxy/Proxy";
+import History from "./pages/history/History";
+import Payments from "./pages/payment/Payment";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Routes>
+        <Route exact path="/" element={<Proxy />}/>
+        <Route path="/proxy" element={<Proxy />}/>
+        <Route path="/history" element={<History/>}/>
+        <Route path="/payments" element={<Payments />}/>
+      </Routes>
     </div>
   );
 }
